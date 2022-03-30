@@ -1,0 +1,20 @@
+#rain {
+    border: 1px solid black;
+    position: absolute;
+}
+
+#pauseButton {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.class-container {
+    position: relative;
+}
