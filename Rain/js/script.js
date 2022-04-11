@@ -5,17 +5,18 @@ var width;
 var height;
 var rain = [];
 drops = 0;
-var dropsMax = 75;
-var dropsSpeed = 12;  
-var grav = 0.1; 
+var dropsMax = 25;
+var dropsSpeed = 8;  
+var grav = 0.05; 
 var maxDist = 10;
 var distMult = 0.1;
 var dropsSize = 3;
 var dropsColor = "rgba(255,255,255,0.5)";
-var background = "rgba(8, 30, 69,1)";
+var background =  "rgba(8, 30, 69,1)";
 
 // Initialize canvas
 function init() {
+    document.body.style.backgroundColor = background;
     canvas = document.getElementById("rain");
     if(canvas.getContext){
         ctx = canvas.getContext('2d');
@@ -28,13 +29,6 @@ function init() {
 }
 
 function setSize(){
-    console.log("Begin");
-    console.log(window.innerWidth);
-    console.log(document.documentElement.clientWidth);
-    console.log(document.body.clientWidth);
-    console.log(window.innerHeight);
-    console.log(document.documentElement.clientHeight);
-    console.log(document.body.clientHeight);
     width = window.innerWidth || document.documentElement.clientWidth || 
 document.body.clientWidth;
     height = window.innerHeight|| document.documentElement.clientHeight|| 
@@ -67,9 +61,9 @@ function RainDrop() {
     this.distance = Math.floor(Math.random() * maxDist);
     this.size = dropsSize/(1+this.distance*distMult);
     this.speed = dropsSpeed/(1+this.distance*distMult);
-    this.color = dropsColor;
+    //this.color = dropsColor;
     this.draw = function() {
-        ctx.fillStyle = this.color;
+        ctx.fillStyle = dropsColor;
         ctx.fillRect(this.x, this.y, this.size, this.size*2);
         /*ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
@@ -110,3 +104,4 @@ function pause() {
     animating = !animating;
     draw();
 }
+

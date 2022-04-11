@@ -1,5 +1,4 @@
 #rain {
-    border: 1px solid black;
     position: absolute;
 }
 
@@ -13,6 +12,7 @@ html, body {
     margin: 0;
     height: 100%;
     width: 100%;
+    background-color:  rgba(8, 30, 69,1);
 }
 
 .class-container {
